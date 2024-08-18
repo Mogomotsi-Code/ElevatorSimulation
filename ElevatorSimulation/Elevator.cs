@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ElevatorSimulation
@@ -41,6 +42,8 @@ namespace ElevatorSimulation
 
             IsMoving = true;
             // Simulate movement
+            Console.WriteLine("Elevator moving.....");
+            Thread.Sleep( Math.Abs(CurrentFloor - targetFloor) * 1000); 
             CurrentFloor = targetFloor;
             IsMoving = false;
             CurrentDirection = Direction.Stopped;
